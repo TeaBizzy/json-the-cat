@@ -13,6 +13,7 @@ const fetchBreedDescription = function(breed, callback) {
     if (data.length < 1) {
       const invalidInquiryErr = new Error(`Invalid inquiry: ${breed}. Please try again...`);
       callback(invalidInquiryErr, null);
+      process.exit();
     }
 
     callback(null, data[0].description);
